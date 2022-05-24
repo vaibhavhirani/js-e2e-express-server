@@ -23,6 +23,7 @@ steps:
   
   
 - script: |
+    npm i jest
     jest --detectOpenHandles --coverage
   displayName: 'Jest Test Cases'  
   
