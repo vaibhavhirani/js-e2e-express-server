@@ -21,9 +21,15 @@ steps:
     npm run build
   displayName: 'npm install and build'
   
+- task: NodeTool@0 |
+  inputs:
+    command: 'install jest'
+  displayName: 'Installing Jest'
+
+
+- task: NodeTool@0 |
+  inputs:
+    command: 'jest --detectOpenHandles --coverage'
+  displayName: 'Running Jest'
   
-- script: |
-    npm i jest
-    jest --detectOpenHandles --coverage
-  displayName: 'Jest Test Cases'  
   
