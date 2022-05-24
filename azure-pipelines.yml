@@ -16,20 +16,15 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    npm i -g npm@7.x.x
     npm install
     npm run build
   displayName: 'npm install and build'
   
-- task: NodeTool@0 |
-  inputs:
-    command: 'install jest'
+- script: |
+    npm install jest
   displayName: 'Installing Jest'
 
-
-- task: NodeTool@0 |
-  inputs:
-    command: 'jest --detectOpenHandles --coverage'
+- script: 'jest --detectOpenHandles --coverage'
   displayName: 'Running Jest'
   
   
