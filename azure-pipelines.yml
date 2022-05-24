@@ -21,7 +21,7 @@ steps:
   displayName: 'npm install and build'
   
 - script: |
-    npm install jest
+    npm i -g jest-cli
   displayName: 'Installing Jest'
 
 - script: 'jest --detectOpenHandles --coverage'
